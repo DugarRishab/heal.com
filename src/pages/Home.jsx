@@ -1,5 +1,6 @@
-import { Box, Typography, Stack, TextField } from "@mui/material";
+import { Box, Typography, Stack, TextField, Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 	return (
@@ -39,6 +40,17 @@ const Home = () => {
 						reproductive healthcare and making it more accessible to
 						everyone.
 					</p>
+					<Link to={"/search"}>
+						<Button
+							variant="contained"
+							sx={{
+								fontSize: "20px",
+								marginTop: "20px",
+							}}
+						>
+							Search for doctors near you {">"}
+						</Button>
+					</Link>
 				</div>
 				<div className="right-col"></div>
 			</div>
@@ -54,9 +66,12 @@ const Home = () => {
 					<p className="heading">What we Offer?</p>
 					<p className="list">
 						<ul>
-							<li>Search for doctor, clinics, hospitals near you</li>
 							<li>
-								Book appointments without going through any middle man
+								Search for doctor, clinics, hospitals near you
+							</li>
+							<li>
+								Book appointments without going through any
+								middle man
 							</li>
 							<li>
 								We keep ur data safe and private and only share
