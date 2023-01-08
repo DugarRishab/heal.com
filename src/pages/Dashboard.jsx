@@ -6,10 +6,11 @@ import "./style.css";
 import locations from "../assets/dev-data/records.json";
 import { useState } from "react";
 
-const Dashboard =() =>{
+const Dashboard = () => {
+	const bookings = [];
     return (
         <Stack
-            className="section search"
+            className="section dashboard"
             direction={"column"}
             sx={{
                 width: "100%",
@@ -26,11 +27,13 @@ const Dashboard =() =>{
 
             <div className="main">
                 
-                
-                <div className="right-col">
-                    
-                    
-                </div>
+				{
+					bookings.length > 0 ? (
+					<div></div>
+					) : (
+							<p className="no-booking">No bookings right now. </p>
+					)
+				}
             </div>
         </Stack>
     );
