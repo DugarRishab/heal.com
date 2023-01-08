@@ -376,7 +376,7 @@ a{
 }
 .footer .rightcol{
 	width: 40%;
-	margin-top: 50px;
+	/* margin-top: 50px; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
