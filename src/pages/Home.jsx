@@ -14,9 +14,6 @@ const Home = () => {
 				alignItems: "center",
 			}}
 		>
-			<div className="tagline">
-				Break the stigma, <a>heal</a> for your future
-			</div>
 			{/* <div className="sub-heading">
 		
 		</div> */}
@@ -45,32 +42,29 @@ const Home = () => {
 				</div>
 				<div className="right-col"></div>
 			</div>
+			<div className="tagline">
+				Break the stigma, <a>heal</a> for your future
+			</div>
 			<div className="main_features">
-				<div className ="left-col">
-				<p className = "heading">Our Features:</p>
-				<p className = "list">
-					<ul>
-						<li>
-						search for doctor/hospitals near you
-						</li>
-						<li>
-						book appointments without goning through middle man
-						</li>
-						<li>
-						we keep ur data safe and private and only share with the hospitals if it is of utmost importance
-						</li>
-					</ul>
-				
-				</p>
+				<div className="features-img">
+					<div className="dark"></div>
+					<img src="/assets/features_imgbg.jpg" alt="" />
 				</div>
-				<div className="right-col"></div>
-				<img
-						class="features_img"
-						src="/assets/features_imgbg.jpg"
-						alt=""
-					/>
-
-	
+				<div className="left-col">
+					<p className="heading">What we Offer?</p>
+					<p className="list">
+						<ul>
+							<li>Search for doctor, clinics, hospitals near you</li>
+							<li>
+								Book appointments without going through any middle man
+							</li>
+							<li>
+								We keep ur data safe and private and only share
+								with the hospitals if it is of utmost importance
+							</li>
+						</ul>
+					</p>
+				</div>
 			</div>
 		</Stack>
 

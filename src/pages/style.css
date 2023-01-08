@@ -218,7 +218,8 @@ a{
 /* Home Page */
 .tagline {
 	font-size: 50px;
-
+	padding: 50px 0;
+	border: 0px solid blue;
 }
 .home .tagline a {
 	background: linear-gradient(
@@ -234,13 +235,14 @@ a{
 }
 .home .main{
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 00px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-start;
 	position: relative;
 	border: 0px solid red;
+	height: 500px;
 }
 .home .main .bg{
 	width: 100%;
@@ -298,23 +300,51 @@ a{
 }
 .home .main_features {
 	
-	width:100%;
-	position:relative;
-	padding: 50px;
+	width: 100%;
+	position: relative;
+	padding: 50px 0;
+	height: 750px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
 }
 .home .main_features .left-col{
-	width : 70%;
-	background-color: rgba(20,20,20);  /*change this to a greyish color? */ 
+	width : 40%;
+	/* background-color: rgba(20,20,20);  change this to a greyish color?  */
+	z-index: 1;
+	border: 0px solid red;
+	/* text-align: right; */
+	position: relative;
+	margin-right: 50px;
 }
-.home .main_features .right-col{
-	width : 30%;
-	display:block; 
-	margin:auto;
-
+.home .main_features .left-col .list ul{
+	text-decoration: none;
+	list-style: none;
+	font-size: 30px;
+	text-align: left;
+	margin-top: 20px;
 }
-.home .main_features .right-col .features_img{
-	display:block; 
-	margin:auto;
+.home .main_features .features-img{
+	width: 100%;
+	height: 750px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* display: none; */
+}
+.home .main_features .features-img .dark{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(15, 15, 15), rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0));
+}
+.home .main_features .features-img img{
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
 }
 .home li{
 	padding: 10px;
@@ -328,6 +358,10 @@ a{
 	width:100%;
 	position: relative;
 	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 .footer::after {
 	position: absolute;
@@ -358,11 +392,19 @@ a{
 	color: rgb(150, 150, 150);
 	width: 40%;
 	margin-top: 0px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding:20px;
+	transition: 0.5s all;
+
+}
+.footer .leftcol a:hover{
+	background: linear-gradient(
+		275.05deg,
+		#ff5252,
+		#ff8a80
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
 }
 
 /* Footer ends*/
