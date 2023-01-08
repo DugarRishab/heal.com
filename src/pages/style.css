@@ -149,9 +149,30 @@
 }
 
 /* ABOUT CSS CODE HERE*/
+
+.about .cover .coverImage {
+	width: 80%;
+	height : 80%;
+	padding : 20px;
+	display:block; 
+	margin:auto;
+}
+
+.about .cover{
+	
+	width: 100%;
+	text-align:center;
+	padding : 20px;
+    
+}
+
+
+
+
 .about .heading {
 	max-width: 80%;
 	padding: 20px;
+
 }
 .about .heading a {
 	background: linear-gradient(
@@ -168,9 +189,20 @@
 
 .about .sub-heading {
 	max-width: 80%;
+	padding: 20px;
 }
+.about .sub-heading p {
+	padding: 10px;
+}
+
 .about .text {
 	max-width: 80%;
+	padding: 20px;
+	justify-content: center;
+	
+}
+.about .text p {
+	padding: 10px;
 }
 
 
