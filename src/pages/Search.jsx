@@ -155,43 +155,46 @@ const Search = ({ setUserLocation, userLocation }) => {
 					</div>
 				</div>
 				<div className="right-col">
-					{
-						filteredLocations.length > 0 ? (
-							<><div className="heading">Search results</div><div className="map">
+					{filteredLocations.length > 0 ? (
+						<>
+							<div className="heading">Search results</div>
+							<div className="map">
 								<div id="map" data-location={locations}></div>
-							</div><div className="results">
-									{filteredLocations.map((loc) => (
-										<div className="item">
-											<div className="content">
-												<div>
-													<h3>{loc.name}</h3>
-													<div className="specs">
-														{loc.specialization
-															.split(",")
-															.map((spec) => (
-																<div className="spec">
-																	{spec}
-																</div>
-															))}
-													</div>
-												</div>
-
-												<div className="address">
-													{loc.address}, {loc.district}
+							</div>
+							<div className="results">
+								{filteredLocations.map((loc) => (
+									<div className="item">
+										<div className="content">
+											<div>
+												<h3>{loc.name}</h3>
+												<div className="specs">
+													{loc.specialization
+														.split(",")
+														.map((spec) => (
+															<div className="spec">
+																{spec}
+															</div>
+														))}
 												</div>
 											</div>
-											<div className="logo"></div>
+
+											<div className="address">
+												{loc.address}, {loc.district}
+											</div>
+											<a href="https://cal.com/rishabdugar/30min">
+												<div className="btn">
+													Make an appointment {">"}
+												</div>
+											</a>
 										</div>
-									))}
-								</div></>
-						) : (
-								<div className="warning">
-									{ warning }
-								</div>
-								
-						)
-					}
-					
+										<div className="logo"></div>
+									</div>
+								))}
+							</div>
+						</>
+					) : (
+						<div className="warning">{warning}</div>
+					)}
 				</div>
 			</div>
 		</Stack>

@@ -57,6 +57,10 @@
 	position: relative;
 	text-decoration: none !important;
 	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
 }
 .navbar .nav-links .item::after{
 	width: 0%;

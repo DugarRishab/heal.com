@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
 
 const AllRoutes = ({userLocation, setUserLocation, user, login, logout}) => {
 	return (
@@ -34,6 +35,19 @@ const AllRoutes = ({userLocation, setUserLocation, user, login, logout}) => {
 						userLocation={userLocation}
 						setUserLocation={setUserLocation}
 					></Search>
+				}
+			></Route>
+			<Route
+				exact
+				path="/dashboard"
+				element={
+					<Dashboard
+						login={login}
+						logout={logout}
+						user={user}
+						userLocation={userLocation}
+						setUserLocation={setUserLocation}
+					></Dashboard>
 				}
 			></Route>
 			<Route

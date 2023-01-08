@@ -31,7 +31,9 @@ const Navbar = ({ userLocation, setUserLocation, user }) => {
 						<div className="item">Search</div>
 					</NavLink>
 					{user ? (
-						<div className="item">{user.name}</div>
+						<div className="item">
+							<Avatar alt = {user.name} src={user.image}></Avatar>
+							{user.name}</div>
 					) : (
 						<NavLink to="/auth">
 							<div className="button">

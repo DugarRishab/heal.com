@@ -5,6 +5,11 @@
 	color: white;
 	max-width: 100%;
 }
+a{
+	color: inherit;
+	list-style: none;
+	text-decoration: inherit;
+}
 .heading {
 	font-size: 50px;
 }
@@ -95,7 +100,7 @@
 }
 .search .main .right-col .results .item {
 	width: min(500px, calc(50% - 20px));
-	height: 160px;
+	height: 180px;
 	background-color: rgba(128, 128, 128, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 20px;
@@ -119,12 +124,14 @@
 	flex-direction: row;
 	gap: 5px;
 	margin-top: 5px;
+
 }
 .search .main .right-col .results .item .content .specs .spec {
 	padding: 0px 10px;
 	background-color: rgba(255, 82, 82, 0.25);
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 25px;
+	font-size: 15px;
 }
 .search .main .right-col .results .item .logo {
 	width: 120px;
@@ -135,6 +142,13 @@
 }
 .search .main .right-col .results .item .content .address {
 	margin-top: 5px;
+}
+.search .main .right-col .results .item .content .btn{
+	padding: 5px 0px;
+	/* border: 1px solid #ff5252; */
+	color: #ff5252;
+	border-radius: 25px;
+	cursor: pointer;
 }
 .search .main .right-col .results .item .logo .image {
 }
@@ -201,6 +215,24 @@
 }
 /* ABOUT CSS CODE ENDS HERE*/
 
+/* Home Page */
+.tagline {
+	font-size: 50px;
+}
+.home .tagline a {
+	background: linear-gradient(
+		275.05deg,
+		#ff5252,
+		#ff8a80
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	font-weight: 500;
+}
+
+/* Home Page ends*/
 .mapboxgl-popup-content {
 	/* background-color: rgb(15, 15, 15); */
 	color: black;
