@@ -45,8 +45,32 @@ const Home = () => {
 				</div>
 				<div className="right-col"></div>
 			</div>
-			<div classname="main_features">
-				<div className="features">lorem ipsum</div>
+			<div className="main_features">
+				<div className ="left-col">
+				<p className = "heading">Our Features:</p>
+				<p className = "list">
+					<ul>
+						<li>
+						search for doctor/hospitals near you
+						</li>
+						<li>
+						book appointments without goning through middle man
+						</li>
+						<li>
+						we keep ur data safe and private and only share with the hospitals if it is of utmost importance
+						</li>
+					</ul>
+				
+				</p>
+				</div>
+				<div className="right-col"></div>
+				<img
+						class="features_img"
+						src="/assets/features_imgbg.jpg"
+						alt=""
+					/>
+
+	
 			</div>
 		</Stack>
 

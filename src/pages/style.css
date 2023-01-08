@@ -296,11 +296,76 @@ a{
 	color: white;
 	margin: 20px;
 }
-.home .features {
-	background-color: #ff8a80;
+.home .main_features {
+	
 	width:100%;
+	position:relative;
+	padding: 50px;
+}
+.home .main_features .left-col{
+	width : 70%;
+	background-color: rgba(20,20,20);  /*change this to a greyish color? */ 
+}
+.home .main_features .right-col{
+	width : 30%;
+	display:block; 
+	margin:auto;
 
 }
+.home .main_features .right-col .features_img{
+	display:block; 
+	margin:auto;
+}
+.home li{
+	padding: 10px;
+}
+/* Home Page ends*/
+
+/* Footer starts css*/
+.footer {
+	background-color: rgb(15, 15, 15);
+	height: 250px;
+	width:100%;
+	position: relative;
+	margin-top: 50px;
+}
+.footer::after {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 90%;
+	transform: translate(-50%);
+	height: 2.5px;
+	content: "";
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.footer .rightcol{
+	width: 40%;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding:20px;
+}
+.footer .right-col .logo{
+	display:block; 
+	margin:auto;
+}
+.footer .leftcol{
+	font-size: medium;
+	color: rgb(150, 150, 150);
+	width: 40%;
+	margin-top: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding:20px;
+}
+
+/* Footer ends*/
 
 .dashboard .heading {
 	margin-top: 50px;
@@ -338,7 +403,7 @@ a{
 	padding: 20px 0;
 	color: rgb(150, 150, 150);
 }
-/* Home Page ends*/
+
 .mapboxgl-popup-content {
 	/* background-color: rgb(15, 15, 15); */
 	color: black;

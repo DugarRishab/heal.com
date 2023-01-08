@@ -2,11 +2,14 @@ import { Box, Typography, Stack, TextField } from "@mui/material";
 import React, { useEffect } from "react";
 import CustomTextField from "../components/CustomTextField";
 import { displayMap } from "../utils/mapbox";
+import { alert } from "../components/CustomAlert/alert";
 import "./style.css";
-import locations from "../assets/dev-data/records.json";
+// import locations from "../assets/dev-data/records.json";
+import { getAllLocations } from "../services/api";
 import { useState } from "react";
 
 const Search = ({ setUserLocation, userLocation }) => {
+	const [locations, setLocations] = useState([]);
 	const [filteredLocations, setFilteredLocations] = useState([]);
 	const [state, setState] = useState(null);
 	const [city, setCity] = useState(null);
@@ -16,38 +19,56 @@ const Search = ({ setUserLocation, userLocation }) => {
 	const [warning, setWarning] = useState("Type something to see results");
 
 	useEffect(() => {
+		const refreshData = async () => {
+			try {
+				const res = await getAllLocations();
+				console.log(res);
+				setLocations(res.data.data.doctors);
+			} catch (err) {
+				console.log(err);
+				alert({ message: err.response.data.message, type: "error" });
+			}
+		};
+
+		refreshData();
+	}, []);
+
+	useEffect(() => {
 		console.log("changes occured", state, city, specialization);
-		if (!search && !specialization && !state && !city && district) {
+		if (
+			!search &&
+			!specialization &&
+			!state &&
+			!city &&
+			!district
+		 ) {
 			setFilteredLocations([]);
 			setWarning("Type something to see results");
 		} else if (!specialization && !state && !city && district) {
 			setFilteredLocations([]);
 			setWarning("Please use additional filters to optimize the results");
-		} else if ((state || city || district)) {
+		} else if (state || city || district) {
 			if (!specialization) {
 				setFilteredLocations([]);
 				setWarning(
 					"Please give a specialization to optimze the results"
 				);
 			} else {
-				console.log(
-					locations.filter(
-						(loc) =>
-							loc.state.includes(state) &&
-							// loc.city.includes(city) &&
-							// loc.district.includes(district) &&
-							loc.specialization.includes(specialization)
-							// loc.name.includes(search)
-					)
-				);
+				
 				console.log(
 					locations.filter(
 						(loc) =>
 							loc.state.includes(state ? state : "") &&
 							loc.city.includes(city ? city : "") &&
-							loc.district.includes(district ? district: "") &&
-							loc.specialization.includes(specialization) &&
-							loc.name.includes(search ? state: "")
+							loc.district.includes(district ? district : "") &&
+							loc.specialization
+								.map((spec) =>
+									spec
+										.toLowerCase()
+										.includes(specialization.toLowerCase())
+								)
+								.includes(true) &&
+							loc.name.includes(search ? state : "")
 					)
 				);
 				setFilteredLocations(
@@ -61,14 +82,18 @@ const Search = ({ setUserLocation, userLocation }) => {
 								.toLowerCase()
 								.includes(district ? district : "") &&
 							loc.specialization
-								.toLowerCase()
-								.includes(specialization) &&
+								.map((spec) =>
+									spec
+										.toLowerCase()
+										.includes(specialization.toLowerCase())
+								)
+								.includes(true) &&
 							loc.name.toLowerCase().includes(search ? state : "")
 					)
 				);
 			}
 		}
-	}, [state, city, district, specialization, search]);
+	}, [state, city, district, specialization, search, locations]);
 
 	console.log(userLocation);
 	console.log(filteredLocations.length);
@@ -169,7 +194,6 @@ const Search = ({ setUserLocation, userLocation }) => {
 												<h3>{loc.name}</h3>
 												<div className="specs">
 													{loc.specialization
-														.split(",")
 														.map((spec) => (
 															<div className="spec">
 																{spec}

@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navabr";
 import AllRoutes from "./Routes";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 export const themeOptions = {
 	palette: {
@@ -90,6 +91,7 @@ function App() {
 							userLocation={userLocation}
 							setUserLocation={setUserLocation}
 						></AllRoutes>
+						<Footer></Footer>
 					</Router>
 				</div>
 			</GoogleOAuthProvider>
