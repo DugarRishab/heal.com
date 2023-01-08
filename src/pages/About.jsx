@@ -14,30 +14,31 @@ const About = () => {
 				border: "0px solid red",
 				alignItems: "center",
 			}}
-		>	
-			<div className ="cover">
-				<img class = "coverImage" src="/assets/about-cover.jpg" alt="" />
-			</div>
-
+		>
 			<div className="heading">
-				30% of women do <a>NOT AVAIL</a> any care for reproductive health due
-				to social stigma.
+				30% of women do <a>NOT AVAIL</a> any care for reproductive
+				health due to social stigma.
 			</div>
 			<div className="sub-heading">
 				<p>
-				When a young girl wants to see a doctor about her irregular
-				periods, she has to face 3 other hospital staff before she can
-				get to the doctor herself.</p>
-				<p>
-				It is unsafe for many unmarried women to seek reproductive healthcare due to familial pressure.
+					When a young girl wants to see a doctor about her irregular
+					periods, she has to face 3 other hospital staff before she
+					can get to the doctor herself.
 				</p>
+				<p>
+					It is unsafe for many unmarried women to seek reproductive
+					healthcare due to familial pressure.
+				</p>
+			</div>
+			<div className="cover">
+				<img class="coverImage" src="/assets/about-cover.jpg" alt="" />
 			</div>
 			<div className="text">
 				<p>
 					All of this is a result of the ideas that society dictates
 					regarding reproductive health.
-				</p> 
-				
+				</p>
+
 				<p>
 					We at Heal recognize the issues that people face everyday
 					due to this stigma. It is not in our hands to change
