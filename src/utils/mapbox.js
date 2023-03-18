@@ -1,7 +1,7 @@
-import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
-import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
+import mapboxgl from "mapbox-gl";
+// import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 
-mapboxgl.workerClass = MapboxWorker;
+// mapboxgl.workerClass = MapboxWorker;
 
 export const displayMap = (locations, userLocation) => {
 	mapboxgl.accessToken =
